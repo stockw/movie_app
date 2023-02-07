@@ -33,7 +33,7 @@ const Search = (props) => {
     const makeServerCall = async (string) => {
         let serverResponse = await axios({
             method: 'GET',
-            url: `http://localhost:5000/get_movie/${string}`
+            url: `/get_movie/${string}`
         });
         console.log(serverResponse);
         setSearchString('');
@@ -41,7 +41,7 @@ const Search = (props) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         console.log("submitting!");
         // if we don't prevent the default, the page will refresh
         // call express server with the string
