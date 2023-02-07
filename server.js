@@ -8,9 +8,10 @@ const path = require('path')
 // console.log(process.env.API_KEY);
 app.use(cors('*/*'))
 
-// SERVE THE REACT FROM THE SERVER
-// app.use(express.static())
+// SERVE THE REACT APP FROM THE SERVER
+app.use(express.static(path.join(__dirname, 'build')))
 
+//ROUTES
 app.get('/get_movie/:movieString', async (req, res) => {
     console.log(req.params.movieString);
 
